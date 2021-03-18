@@ -10,6 +10,7 @@ import {
 import Cart from "../Cart/Cart";
 import ReviewItem from "../ReviewItem/ReviewItem";
 import Image from "../../images/giphy.gif";
+import { useHistory } from "react-router";
 const Review = () => {
   const [cart, setCart] = useState([]);
   const handleRemoveProduct = (productKey) => {
@@ -30,11 +31,10 @@ const Review = () => {
     setCart(cartProducts);
   }, []);
   const [orderDone, setOrderDone] = useState(false);
-
-  const handlePlaceOrder = () => {
-    setOrderDone(true);
-    setCart([]);
-    processOrder();
+  const history=useHistory();
+  const handleShipment = () => {
+    
+    history.push('/shipment')
   };
   let thankYou;
   if (orderDone) {
@@ -54,8 +54,8 @@ const Review = () => {
       </div>
       <div className="cart-container">
         <Cart cart={cart}>
-          <button onClick={handlePlaceOrder} className="button">
-            Place Order!
+          <button onClick={handleShipment} className="button">
+            Proceed to shipment
           </button>
         </Cart>
       </div>

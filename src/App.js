@@ -6,6 +6,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Review from "./Components/Review/Review";
 import Inventory from "./Components/Inventory/Inventory";
 import ProductDetail from "./Components/ProductDetail/ProductDetail";
+import Shipment from "./Components/Shipment/Shipment";
+import Login from "./Components/Login/Login";
 
 function App() {
   return (
@@ -14,16 +16,22 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Shop />
+          <Shop />
           </Route>
           <Route exact path="/shop">
-            <Shop />
+          <Shop />
           </Route>
           <Route exact path="/review">
             <Review />
           </Route>
           <Route exact path="/inventory">
             <Inventory />
+          </Route>
+          <Route exact path="/shipment">
+            <Shipment />
+          </Route>
+          <Route exact path="/login">
+            <Login />
           </Route>
           <Route exact path="/product/:productKey">
             <ProductDetail />
