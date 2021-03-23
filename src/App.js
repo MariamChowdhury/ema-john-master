@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react";
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./Components/Header/Header";
 import Shop from "./Components/Shop/Shop";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";

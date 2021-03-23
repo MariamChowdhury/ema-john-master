@@ -8,6 +8,7 @@ import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
 import { Link } from "react-router-dom";
+import { Spinner } from "react-bootstrap";
 const Shop = () => {
   const first10 = fakeData.slice(0, 10);
   const [products,setProducts] = useState(first10);
@@ -43,6 +44,12 @@ const Shop = () => {
   return (
     <div className="twin-container">
       <div className="product-container">
+        {
+          products.length ===0 && <p>Loading.........</p>
+        //    <Spinner animation="border" role="status">
+        //   <span className="sr-only">Loading...</span>
+        // </Spinner>
+        }
         {products.map((pd) => (
           <Product
             key={pd.key}
