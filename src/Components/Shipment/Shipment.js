@@ -10,7 +10,7 @@ const Shipment = () => {
   const onSubmit = (data) =>{
     const savedCart=getDatabaseCart();
     const orderDetails={...loggedInUser,products: savedCart,shipment:data}
-    fetch("http://localhost:3000/addOrder", {
+    fetch("https://blueberry-pie-66457.herokuapp.com/addOrder", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

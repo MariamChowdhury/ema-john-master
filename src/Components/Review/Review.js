@@ -22,7 +22,7 @@ const Review = () => {
   useEffect(() => {
     const savedCart = getDatabaseCart();
     const productKeys = Object.keys(savedCart);
-    fetch("http://localhost:3000/productByKeys", {
+    fetch("https://blueberry-pie-66457.herokuapp.com/productByKeys", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -2,7 +2,7 @@ import React from 'react';
 import fakeData from "../../fakeData";
 const Inventory = () => {
   const handleAddProducts=() => {
-    fetch('http://localhost:3000/addProduct',{
+    fetch('https://blueberry-pie-66457.herokuapp.com/addProduct',{
       method:"POST",
       headers: {
         "Content-Type":"application/json"

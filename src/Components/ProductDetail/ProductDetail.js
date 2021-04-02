@@ -7,7 +7,7 @@ const ProductDetail = () => {
   const { productKey } = useParams();
   const [product,setProduct]=useState({})
   useEffect(() => {
-    fetch("http://localhost:3000/product/"+productKey)
+    fetch("https://blueberry-pie-66457.herokuapp.com/product/"+productKey)
     .then(res => res.json())
     .then(data =>setProduct(data))
   },[product])
