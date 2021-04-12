@@ -11,10 +11,13 @@ import ReviewItem from "../ReviewItem/ReviewItem";
 import Image from "../../images/giphy.gif";
 import { useHistory } from "react-router";
 const Review = () => {
+  const [orderDone, setOrderDone] = useState(false);
+  const history = useHistory();
   const [cart, setCart] = useState([]);
   const handleRemoveProduct = (productKey) => {
     console.log("clicked", productKey);
     const newCart = cart.filter((pd) => pd.key !== productKey);
+    console.log(newCart);
     removeFromDatabaseCart(productKey);
     setCart(newCart);
   };
@@ -22,7 +25,7 @@ const Review = () => {
   useEffect(() => {
     const savedCart = getDatabaseCart();
     const productKeys = Object.keys(savedCart);
-    fetch("https://blueberry-pie-66457.herokuapp.com/productByKeys", {
+    fetch("https://blueberry-pie-66457.herokuapp.com/productsByKeys", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,8 +35,7 @@ const Review = () => {
       .then((res) => res.json())
       .then((data) => setCart(data));
   }, []);
-  const [orderDone, setOrderDone] = useState(false);
-  const history = useHistory();
+  
   const handleShipment = () => {
     history.push("/shipment");
   };
